@@ -1,15 +1,9 @@
 import React from 'react'
 
-const ExperienceItem = (props) => {
-    const { expItems } = props;
-
+export default function ExperienceItem( {task} ) {
     return (
         <div>
-            {expItems.map((expItem) => {
-                return <h1 key={expItem.id}>{expItem.text}</h1>;
-            })}
+    
         </div>
-    );
-};
-
-export default ExperienceItem;
+    )
+}

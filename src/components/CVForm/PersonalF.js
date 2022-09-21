@@ -4,6 +4,7 @@ import { Personal } from '../CVPreview/Personal';
 
 
 export  function PersonalF() {
+    //useState initial state storage
     const initialValues = {
         fname: "",
         lname: "",
@@ -100,6 +101,5 @@ export  function PersonalF() {
             
             <Personal firstName={data.fname} lastName={data.lname} title={data.title} prof={data.pnfo} pic={preview}/>
         </form>
-        )
-    
+        )    
 }

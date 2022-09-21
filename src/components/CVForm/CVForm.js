@@ -1,7 +1,7 @@
 import React from 'react';
 import { PersonalF } from './PersonalF';
 import ContactF from './Contact';
-import Experience from './Experience';
+import { ExperienceF } from './ExperienceF';
 import Education from './Education';
 
 export default function CVForm() {
@@ -9,7 +9,7 @@ export default function CVForm() {
         <div>
             <PersonalF/>
             <ContactF/>
-            <Experience/>
+            <ExperienceF/>
             <Education/>
         </div>
     )

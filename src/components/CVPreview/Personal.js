@@ -11,6 +11,6 @@ export class Personal extends React.Component {
                 <p>Profile Info: {this.props.prof}</p>
                 <img alt="" onError={(event) => event.target.style.display = 'none'} src={this.props.pic}></img>
             </div>
-        )
+        ) 
     }
 }
