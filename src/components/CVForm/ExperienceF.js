@@ -39,10 +39,13 @@ export function ExperienceF () {
         event.preventDefault();
         setInfos(initialValues);
     
-        setList(prevList => {
+        /* setList(prevList => {
             return [...prevList, {infos : infos
             }]        
-        });
+        }); */
+
+        setList(list.concat(infos));
+        setInfos(initialValues);
         
 
         
