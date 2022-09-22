@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components';
 
-export default function ContactF() {
+export  function ContactF() {
     const initialValues = {
         phone: "",
         email: "",
@@ -20,6 +21,7 @@ export default function ContactF() {
     };
 
     return (
+    <Contacstyle>
         <div className='Contact'>
             <h3>Contact</h3>
             <FontAwesomeIcon icon={faPhone}></FontAwesomeIcon>
@@ -52,5 +54,10 @@ export default function ContactF() {
             </input>
             <Contact phone={data.phone} email={data.email} address={data.address}/>
         </div>
+    </Contacstyle>
     )
 }
+
+const Contacstyle = styled.div`
+background-color: snow;
+`;
