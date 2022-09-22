@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useRef, useEffect } from 'react';
 import { Personal } from '../CVPreview/Personal';
+import styled from 'styled-components'
 
 
 export  function PersonalF() {
@@ -40,7 +41,10 @@ export  function PersonalF() {
 
     
     return (
+        <Contacstyle className='style'>
+        
         <form className='Summary'>
+        <FormS className='styleF'>
             <h3>Personal Information</h3>
             <input 
                 onChange={handleChange}
@@ -66,13 +70,12 @@ export  function PersonalF() {
             value={data.title}>
             </input>
 
-            <input
+            <textarea
             onChange={handleChange} 
-            type='text' 
             placeholder='Profile Info'
             name="pnfo"
             value={data.pnfo}>
-            </input>
+            </textarea>
 
             <label></label>
             <input 
@@ -98,8 +101,38 @@ export  function PersonalF() {
                         console.log("here",{preview});
                     }}>Add Image</button>
                 </div>
-            
-            <Personal firstName={data.fname} lastName={data.lname} title={data.title} prof={data.pnfo} pic={preview}/>
-        </form>
+                </FormS>
+            </form>
+        
+                <Preview className='Preview'>
+                    <Personal firstName={data.fname} lastName={data.lname} title={data.title} prof={data.pnfo} pic={preview}/>
+                </Preview>
+        
+        </Contacstyle>
         )    
 }
+
+const Contacstyle = styled.div`
+background-color: #019875;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr;
+gap: 2em 0px; 
+`;
+
+const Preview = styled.div`
+background-color: #BFD834;
+border: 1px solid black;
+padding-bottom: 20px;
+border-bottom: none;
+display: flex;
+justify-content: center;
+`;
+
+const FormS = styled.div`
+display: flex;
+flex-direction: column;
+width: 80%;
+padding-left: 10%;
+gap: 9px; 
+`;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Experience from "../CVPreview/Experience";
 import uniqid from "uniqid";
+import styled from "styled-components";
 
 export function ExperienceF () {
     
@@ -40,7 +41,9 @@ export function ExperienceF () {
         localStorage.setItem(Local_list_key, JSON.stringify(list))
     }, [list]);
     return (
+        <Contacstyle>
         <form onSubmit={addItem}>
+            <FormS>
             <h3>Experience</h3>
             <label htmlFor="taskInput"></label>
             <input 
@@ -89,8 +92,35 @@ export function ExperienceF () {
             >
             </input>
             <button type="submit" >Add</button>
-            <Experience parentToChild={list} childtoParent={handleDelete}/>
+            </FormS>
+            </form>
+            <Preview className='Preview'>
+                <Experience parentToChild={list} childtoParent={handleDelete}/>
+            </Preview>
+            </Contacstyle>
         
-        </form>
     );
 }
+
+const Preview = styled.div`
+background-color: #BFD834;
+border: 1px solid black;
+padding-bottom: 20px;
+border-top: none;
+border-bottom: none;
+`;
+const Contacstyle = styled.div`
+background-color: #019875;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr;
+gap: 2em 0px; 
+`;
+
+const FormS = styled.div`
+display: flex;
+flex-direction: column;
+gap: 9px; 
+width: 80%;
+padding-left: 10%;
+`;

@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.here{
+  padding: 0;
+}
+
+.zurag{
+  padding-bottom: 30px;
+}
+
+input[type="text"] {
+  height: 1.5em;
+}
+
+textarea {
+  height: 5em;
+}

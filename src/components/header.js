@@ -1,11 +1,20 @@
 import React from 'react'
-
+import styled from 'styled-components';
 const Header = () => {
     return (
-    
-        <h1>CV BUILDER</h1>
-    
+        <HeaderS className='style'>
+        <div className='Header'>
+            CV BUILDER
+        </div>
+        </HeaderS>
 )
+
 }
 
-export default Header
+export default Header;
+
+const HeaderS = styled.div`
+background-color: #e4f3ff;
+font-size: 2em;
+padding: 20px;
+`;

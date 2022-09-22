@@ -7,17 +7,24 @@ import styled from 'styled-components';
 
 export default function CVForm() {
     return (
-    <formStyle>
-        <div>
+    <FormStyle className='Style'>
+        <div class="CVForm">
             <PersonalF/>
             <ContactF/>
             <ExperienceF/>
             <EducationF/>
         </div>
-    </formStyle> 
+    </FormStyle> 
     )
 }
 
-const formStyle = styled.div`
+const FormStyle = styled.div`
 background-color: snow;
+display: grid;
+grid-template-columns: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+padding: 10px;
+padding-bottom: 20px;
+border: 1px solid black;
 `;

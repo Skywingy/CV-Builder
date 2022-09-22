@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Education from '../CVPreview/Education'
+import Education from '../CVPreview/Education';
 import uniqid from "uniqid";
+import styled from 'styled-components';
 
 export  function EducationF() {
 
@@ -52,7 +53,10 @@ export  function EducationF() {
     }, [list]);
 
     return (
+    <Contacstyle className='Edu'>
+        <Form>
     <form className='Education' onSubmit={addItem}>
+        <FormS>
         <h3>Education</h3>
         <input 
         type='text' 
@@ -119,7 +123,40 @@ export  function EducationF() {
         >
         </input>
         <button type='submit'>Add</button>
-        <Education parentToChild={list} childtoParent={handleDelete}/>
-    </form>
+        </FormS>
+        </form>
+        </Form>
+        <Preview className='Preview'>
+            <Education parentToChild={list} childtoParent={handleDelete}/>
+        </Preview>
+    </Contacstyle>
     )
 }
+
+const Preview = styled.div`
+background-color: #BFD834;
+border: 1px solid black;
+padding-bottom: 20px;
+border-top: none;
+`;
+const Contacstyle = styled.div`
+background-color: #019875;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr;
+gap: 2em 0px; 
+margin-bottom: 20px;
+`;
+
+const Form = styled.div`
+background-color: #019875;
+padding-bottom: 40px;
+`;
+
+const FormS = styled.div`
+display: flex;
+flex-direction: column;
+width: 80%;
+padding-left: 10%;
+gap: 9px; 
+`;

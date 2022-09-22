@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
 
 export default function Experience({parentToChild, childtoParent}){
         return (
-            <ul>
+            <ExperienceP>
+            <h3>Experience:</h3>
+            <ul className='here'>
+                
                 {parentToChild.map((infos) => {
                 return <div key={infos.id}>
                     
@@ -14,8 +18,13 @@ export default function Experience({parentToChild, childtoParent}){
                         <button
                         onClick={()=> childtoParent(infos.id)}>Delete</button>
                         </div>
-                })}
+                })}      
             </ul>
+            
+            </ExperienceP>
         );
-    
 };
+
+const ExperienceP = styled.div`
+background-color: #BFD834;
+`;
